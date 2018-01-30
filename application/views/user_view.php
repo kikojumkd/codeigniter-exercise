@@ -10,6 +10,7 @@
         foreach ($results as $object) {
             echo $object->idusers . ". username: " . $object->username . "; password: " . $object->password . "<br>";
         }
+//        echo $results
         ?></h1>
 
     </body>
