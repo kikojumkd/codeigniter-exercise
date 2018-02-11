@@ -10,5 +10,8 @@
     <?php if($this->session->flashdata('login_failed')):?>
     <?php echo $this->session->flashdata('login_failed');?>
     <?php endif;?>
+    <?php if($this->session->flashdata('no_access')):?>
+        <?php echo $this->session->flashdata('no_access');?>
+    <?php endif;?>
 </p>
 <h1>Hello this is a view.</h1>
