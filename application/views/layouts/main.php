@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Document</title>
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
         <script src="<?php echo base_url();?>assets/js/jquery-3.3.1.min.js"></script>
         <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
@@ -21,9 +22,19 @@
                     <a class="nav-link" href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url();?>projects">Projects</a>
+                </li>
+                <?php if(!$this->session->userdata('logged_in')) { ?>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url();?>users/register">Register</a>
                 </li>
+                <?php } ?>
             </ul>
+            <?php if($this->session->userdata('logged_in')): ?>
+            <ul class="nav navbar-nav naavbar-right">
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>users/logout">Logout</a></li>
+            </ul>
+            <?php endif; ?>
         </div>
     </nav>
         <div class="container">

@@ -14,4 +14,27 @@
         <?php echo $this->session->flashdata('no_access');?>
     <?php endif;?>
 </p>
-<h1>Hello this is a view.</h1>
+<?php if(isset($projects)) { ?>
+<h1>Projects</h1>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Project Name</th>
+        <th colspan="2">Project Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($projects as $project): ?>
+        <tr>
+            <td><?= $project->project_name; ?></td>
+            <td><?= $project->project_body; ?></td>
+            <td><a href="<?= base_url(); ?>projects">View</a></td>
+        </tr>
+    <?php endforeach;?>
+    </tbody>
+</table>
+<?php } else { ?>
+    <div class="jumbotron">
+        <h2 class="text-center">Welcome to the CI App</h2>
+    </div>
+<?php } ?>
